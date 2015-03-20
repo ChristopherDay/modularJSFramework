@@ -1,0 +1,13 @@
+<script id="Main-Template" type="text/x-handlebars-template">
+	{{#if menu}}
+		{{#each menu}}
+			<li data-execute-module="{{name}}"><a href="#">{{name}}</a></li>
+		{{/each}}
+	{{/if}}
+	<div class="module-loader">
+		<h1>{{header}}</h1>
+		<p>
+			{{text}}
+		</p>
+	</div>
+</script>

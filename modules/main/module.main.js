@@ -3,6 +3,9 @@
 	
 	main.prototype = {
 
+		/* Test to see what happens when there is no includes */
+		includes: [],
+
 		/*
 		 * 	@desc The function that is called when the module is executed
 		 */

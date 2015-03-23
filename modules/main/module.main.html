@@ -1,9 +1,11 @@
 <script id="Main-Template" type="text/x-handlebars-template">
-	{{#if menu}}
-		{{#each menu}}
-			<li data-execute-module="{{name}}"><a href="#">{{name}}</a></li>
-		{{/each}}
-	{{/if}}
+	<div class="menu">
+		{{#if menu}}
+			{{#each menu}}
+				<li data-execute-module="{{module}}"><a href="#">{{name}}</a></li>
+			{{/each}}
+		{{/if}}
+	</div>
 	<div class="module-loader">
 		<h1>{{header}}</h1>
 		<p>

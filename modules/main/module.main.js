@@ -3,6 +3,8 @@
 	
 	main.prototype = {
 
+		origMainArea: null,
+
 		/* Test to see what happens when there is no includes */
 		includes: [],
 
@@ -12,6 +14,13 @@
 		construct: function () {
 			
 			var self = this;
+
+			/* Store the original container incase this module is execured again, otherwise it will keep loading the template within itself */
+			if (self.origMainArea == null) {
+				self.origMainArea = core.mainArea;
+			} else {
+				core.mainArea = self.origMainArea;
+			}
 
 			/* Load the main Template file */
 			core.parseTemplate("Main-Template", core.mainArea, {
@@ -24,6 +33,7 @@
 			});
 
 			/* Update the main area to be the .module-loader div this way we can use this to redraw modules into the page without redrawing the whole html document */
+			core.mainArea = $(".module-loader")
 			core.mainArea = $(".module-loader")
 
 			/* Bind the JQuery events to elements on the page */
